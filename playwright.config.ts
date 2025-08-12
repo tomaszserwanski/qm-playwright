@@ -1,0 +1,30 @@
+import { defineConfig, devices } from '@playwright/test';
+
+export default defineConfig({
+  testDir: './tests',
+  timeout: 30_000,
+  expect: { timeout: 5_000 },
+  retries: process.env.CI ? 2 : 0,
+  fullyParallel: true,
+  reporter: process.env.CI ? [['html', { open: 'never' }], ['list']] : [['html', { open: 'on-failure' }]],
+  use: {
+    baseURL: 'https://qualityminds.com/pl/',
+    trace: 'retain-on-failure',
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure'
+  },
+  projects: [
+    {
+      name: 'Chromium',
+      use: { ...devices['Desktop Chrome'] }
+    },
+    {
+      name: 'Firefox',
+      use: { ...devices['Desktop Firefox'] }
+    },
+    {
+      name: 'WebKit',
+      use: { ...devices['Desktop Safari'] }
+    }
+  ],
+});
