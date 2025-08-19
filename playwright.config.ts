@@ -8,7 +8,8 @@ export default defineConfig({
   fullyParallel: true,
   reporter: process.env.CI ? [['html', { open: 'never' }], ['list']] : [['html', { open: 'on-failure' }]],
   use: {
-    baseURL: 'https://qualityminds.com/pl/',
+    baseURL: 'https://qualityminds.pl/',
+    locale: 'pl-PL',
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure'
