@@ -9,7 +9,7 @@ export class BasePage {
 
   constructor(page: Page) {
     this.page = page;
-    this.nav = page.locator('nav');
+    this.nav = page.locator('.front-header-top nav');
     this.footer = page.locator('footer');
     this.cookieBanner = page.locator('[id*="cookie" i], [class*="cookie" i], #cookie-banner');
     this.acceptCookiesBtn = page.getByRole('button', { name: /akcept|zgadzam|accept|ok/i });
