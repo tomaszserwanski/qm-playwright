@@ -1,4 +1,4 @@
-Prequisites
+# Installation Guide
 
 Visual Studio Code
 https://code.visualstudio.com/download
@@ -14,7 +14,10 @@ Select Git Bash.
 Since now bash will be a default Terminal
 
 You can use VSC terminal or you will have app Git Bash installed on your computer
-====================================================================================
+
+
+# GitHub
+
 Crete an account on github
 https://github.com/
 
@@ -25,8 +28,8 @@ On Settings page, from left side menu select SSH and GPG keys. And then button "
 Title like you wish ( to help you identify computer you are connecting)
 Key: your ssh key - below you will find instruction how to generate  
 
-====================================================================================
-Generating SSH public key
+
+#### Generating SSH public key
 
 `ssh-keygen -t ed25519 -C "your@email.com"`
 
@@ -44,8 +47,9 @@ you can open it in notepad or via command:
 copy your key - it looks like this:
 ssh-ed25519 BSAAC3NzaC1lZDI1NTE5AAAAILca7kOw/HtgKlBcnIFk3OahfJ+766svSH7dgBSziSo9
 
-=================================================================================
 
+
+# Preparing repository
 
 Now you can clone repository
 
@@ -53,7 +57,9 @@ Go to the folder you want to have your repo and in terminal write:
 
 `git clone git@github.com:qmauto/qualityminds-playwright.git`
 
-=================================================================================
+
+
+## Preparation to run tests
 
 Instal NodeJS ( with option: add to Path)
 
@@ -65,9 +71,6 @@ check in terminal if it is installed
 `node -v`
 `npm -v`
 
-
-=====================================
-
 Be sure you are in the project folder
 
 install dependencies from package.json
@@ -77,13 +80,13 @@ When it is done install browsers
 `npx playwright install`
 
 
-YOU ARE READY TO RUN TESTS ============================================================
+### *YOU ARE READY TO RUN TESTS* 
 
-You are running all test 
+Running all
 
-`npx playwright test`. <== YOUR BASIC COMMAND
+`npx playwright test`. <== **YOUR BASIC COMMAND**
 
-Optionally - ui mode
+Optionally with UI mode 
 
 `npx playwright test --ui`
 or headed ( when you see how the test is running)
