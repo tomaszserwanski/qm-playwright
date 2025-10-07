@@ -106,3 +106,5 @@ Single file with tests - here home.spec.ts:
 `npx playwright test home.spec.ts`
 
 Added a new change to try out commits
+
+Test2
