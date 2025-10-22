@@ -14,7 +14,7 @@ export class ContactPage extends BasePage {
   }
 
   async selectPrivacyPolicy() {
-    this.privacyPolicy.click();
+    this.privacyPolicy.check();
   }
 
   async fillInput(element: Locator, text: string) {
