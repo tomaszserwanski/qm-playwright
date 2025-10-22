@@ -15,13 +15,14 @@ test.describe('Nawigacja – kluczowe sekcje', () => {
     await expect(page).toHaveURL(/services|uslugi|oferta/i);
   });
 
-  test('najechanie na "Testowanie i kontrola jakości" pokazuje submenu', async () => {
+  test('najechanie na "Testowanie i kontrola jakości" pokazuje submenu', async ( {page} ) => {
 
     // łapiemy li zawierający odpowiedni link
     await expect(home.subNavTestingQA).toHaveCount(1); // tylko jeden element
     
     await home.subNavTestingQA.hover();
-    
+    await page.pause(); 
+
     // selector sub-menu
     const subMenu = home.subNavTestingQA.locator('ul');
 
@@ -35,4 +36,10 @@ test.describe('Nawigacja – kluczowe sekcje', () => {
     // opcjonalnie: kliknij w link
     await overviewLink.click();
   })
+
+  test('codegen', async ({ page }) => {
+    await page.goto('https://otodom.pl');
+    await page.pause();
+  });
+
 });
